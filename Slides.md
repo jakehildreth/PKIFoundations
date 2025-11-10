@@ -50,8 +50,7 @@ PowerShell + Identity & Access
 
 * History & Goals
 * Encoding vs. Encryption
-* Symmetric Encryption
-* Asymmetric Encryption
+* Symmetric & Asymmetric Encryption
 * Hashing Functions
 </div>
 
@@ -85,7 +84,7 @@ In the beginning was the **pass**word...
 * 600 BCE: Hebrew Scholars
 * 400 BCE: Polybius Square
 * 300 BCE: Kama Sutra
-* 75 BCE: Caesar
+* 75 BCE: Caesar Cipher
 </div>
 <div class='col'>
 
@@ -153,13 +152,13 @@ In the beginning was the **pass**word...
 
 ---
 
-![bg left](images/Integra.jpg)
+![bg left:60%](images/Integra.jpg)
 # Integrity
 ### Ensures a message has not been tampered with or changed.
 
 ---
 
-![bg right](images/.jpg)
+![bg right:42%](images/Bart.jpg)
 # Non-Repudiation
 ### Ensures an author cannot refute authorship of a message.
 
@@ -172,7 +171,7 @@ In the beginning was the **pass**word...
 ---
 <!-- _class: lead -->
 # **Encoding vs. Encryption**
-It's all about intention
+Secret or nah?
 
 ---
 
@@ -196,7 +195,7 @@ It's all about intention
 
 ---
 
-![bg right:42% 100%](images/Dolphin.jpeg)
+![bg right:42%](images/Dolphin.jpeg)
 # Example: Cetacean Cipher
 - "Hello, Anti-Cast!" encoded:
 * EEEEEEEEEeEEeEEEEEEEEEEEEeeEEeEeEEEEEEEEEeeEeeEEEEEEEEEEEeeEeeEEEEEEEEEEEeeEeeeeEEEEEEEEEEeEeeEE EEEEEEEEEeEEEEEeEEEEEEEEEeeEeeeEEEEEEEEEEeeeEeEEEEEEEEEEEeeEeEEeEEEEEEEEEEeEeeEeEEEEEEEEEeEEEEeeEEEEEEEEEeeEEEEeEEEEEEEEEeeeEEeeEEEEEEEEEeeeEeEEEEEEEEEEEEeEEEEe
@@ -210,7 +209,9 @@ It's all about intention
 - Intended to remain secret
 * Yes! **Confidentiality**
 * Requires 1 or more "keys"
-* Keys are just **really** big numbers
+* Keys are any secret data
+* In modern cryptography, keys are
+**really** big numbers
 </div>
 
 <div class='col'>
@@ -249,29 +250,54 @@ Pretty much all cryptography before the 1970s
 <div class='col'>
 
 ## Cons
-* Keys must be shared via a secure channel before communication
+* Keys must be pre-shared via a secure channel before communication
 = Difficult!
 * One key per communication group
 = Key management becomes untenable
-* Does not protect Integrity, ensure Non-repudiation, provide Authentication
-= Limited Use
+* Does not protect Integrity, ensure Non-repudiation, or enable Authentication
 </div>
 
 ---
-<!-- _class: lead -->
-# **Example: ROT13**
-Hello, Anti-Cast!
-![w:125](images/SymmetricKey.png)
-ROT13
-Uryyb, Nagv-Pnfg!
-ROT13
-![w:125](images/SymmetricKey.png)
-Hello, Anti-Cast!
+
+# Example: Caesar Cipher (Symmetric)
+<div class='container'>
+<div class='col'>
+
+- Also known as: Shift cipher or ROT*
+- Symmetric Encryption ~= ROT13
+</div>
+
+<div class='col'>
+
+
+- A(1) + Shift(13) = N(14)
+- N(14) + Shift(13) = A(1)
+</div>
+</div>
+
+| Original | A | B | C | D | E | F | G | H | I | J | K | L | M | 
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| **Value** | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
+| **"Encrypted"** | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+
+| Original | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| **Value** | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 15 | 26 |
+| **"Encrypted"** | A | B | C | D | E | F | G | H | I | J | K | L | M | 
+
+---
+
+# Example: Caesar Cipher (Symmetric)
+| Original Message | Alice Encrypts (ROT13) | Encrypted Message | Bob Decrypts (ROT13) | Received Message |
+| - | - | - | - | - | 
+| Hello, Anti-Cast! | ![center w:300](images/SymmetricKey.png) | Olssv, Huap-Jhza! | ![center w:300](images/SymmetricKey.png) | Hello, Anti-Cast! |
+
+<sub>Try it yourself: https://rot13.com</sub>
 
 ---
 <!-- _class: lead -->
 # **Asymmetric Encryption**
-The enabler of the modern internet
+Encrypt with one & Decrypt with the other
 
 ---
 
@@ -280,12 +306,12 @@ The enabler of the modern internet
 <div class='col'>
 
 ## Pros
-* One **key pair** per identity
-= Easy to manage
+* One **key pair** (public + private) per user
+= Easy(ish) to manage
 * Public keys can be shared over insecure channel
 = Much easier than secure channel
-* Provides Confidentiality, Integrity, Non-repudiation & Authentication
-= Secure communications over insecure networks
+* Provides **Confidentiality**, **Integrity**,
+**Non-repudiation**
 
 </div>
 
@@ -294,19 +320,47 @@ The enabler of the modern internet
 ## Cons
 * Complicated algorithms
 = Not fast
+* No verification of other side
+= Impersonation possible
 </div>
 
 ---
 
-<!-- _class: lead -->
-# **Example: ROT7 + ROT19**
-Hello, Anti-Cast!
-![w:125](images/PublicKey.png)
-ROT7
-Olssv, Huap-Jhza!
-ROT19
-![w:125](images/PrivateKey.png)
-Hello, Anti-Cast!
+# Example: Caesar Cipher (Asymmetric)
+<div class='container'>
+<div class='col'>
+
+- Public Key ~= ROT7
+- Private Key ~= ROT19
+</div>
+
+<div class='col'>
+
+
+- A(1) + Shift(7) = H(8)
+- H(8) + Shift(19) = A(1)
+</div>
+
+</div>
+
+| Original | A | B | C | D | E | F | G | H | I | J | K | L | M | 
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| **Value** | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
+| **"Encrypted"** | H | I | J | K | L | M | N | O | P | Q | R | S | T |
+
+| Original | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| **Value** | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 15 | 26 |
+| **"Encrypted"** | U | V | W | X | Y | Z | A | B | C | D | E | F | G | 
+
+---
+
+# Example: Caesar Cipher (Asymmetric)
+| Original Message | Alice Encrypts (ROT7) | Encrypted Message | Bob Decrypts (ROT19) | Received Message |
+| - | - | - | - | - | 
+| Hello, Anti-Cast! | ![center w:300](images/PublicKey.png) | Olssv, Huap-Jhza! | ![center w:300](images/PrivateKey.png) | Hello, Anti-Cast! |
+
+<sub>Try it yourself: https://rot13.com</sub>
 
 --- 
 
@@ -316,30 +370,58 @@ Subheading TBD
 
 ---
 
-# Hash Functions
 <div class='container'>
 <div class='col'>
 
+# Hash Functions
 - Maps any data to a (probably) unique fixed-length value
-- Can't be easily reversed
-- Ensures Integrity
-* HELLOANTICAST
-  - 8+5+12+12+15+1+14+
-  20+9+3+1+19+20
-  - Hash: 0139
+- Can't be easily reversed to discover source data
+- Changing even a single bit of source data changes the hash
+- Ensures **Integrity**
 </div>
+
 <div class='col'>
 
-| Letter | Number | Letter | Number |
-|-|-|-|-|
-| H | 8 | N | 14 |
-| E | 5 | T | 20 |
-| L | 12 | I | 9 |
-| O | 15 | C | 3 |
-| A | 1 | S | 19 |
+# Common Schemes
 
-<sub>Note: this is a terrible hash function. Do not use this for anything.
+- MD4/5
+- SHA-0/1/2/3
+- DSA
 </div>
+</div>
+
+---
+
+# Silly Example: Addition
+| Original | A | B | C | D | E | F | G | H | I | J | K | L | M | 
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| **Value** | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 |
+
+| Original | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| **Value** | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 15 | 26 |
+
+<div class='container'>
+<div class='col'>
+
+- HELLOANTICAS**T**
+  - 8+5+12+12+15+1+14+
+  20+9+3+1+19+**20**
+  - Hash: **0139** or **0ACI**
+</div>
+
+<div class='col'>
+
+* HELLOANTICAS**H**
+  - 8+5+12+12+15+1+14+
+  20+9+3+1+19+**8**
+  - Hash: **0127** or **0ABG**
+</div>
+
+</div>
+
+<sub>Note: This is a terrible hash function full of collisions. Do not use this for anything.</sub>
+
 
 <!--
 Max letter = 38
@@ -347,27 +429,148 @@ Max letter = 38
 
 ---
 
+# Real Examples: SHA1 & 2
+| Original | Hello, Anti-Cas*t*! | Hello, Anti-Cas*h*!
+| - | - | - |
+| SHA1 | 94bc685b3657b730ed72 696e036260d3fea8ab23 | 6d1ceba487b84474d554 599b24dea1fed95264ab |
+| SHA2-256 | a993f8f095c0c43348cd3 9fead7ec3fd4a26a53e889 d2a89e42adbdfde093398 | ea37a553bb16967a4545 b9f4fb11c19e9dfcdaf5ac 3f7fbdfa93a93f7cca145b |
+
+<sub>Try it yourself: https://gchq.github.io/CyberChef
+
+---
+
 <!-- _class: lead -->
 # **Signing**
-Subheading TBD
+Hashing + Asymmetric Encryption = Better Than Ink
+
+---
+
+<div class='container'>
+<div class='col'>
+
+# Signing Process
+* Alice creates a hash of a message
+* Alice encrypts **the hash**
+with her private key
+* Alice sends the message +
+the encrypted hash to Bob
+* Bob decrypts the hash of the message using Alice's private key
+* Bob hashes the original message himself
+* If hashes match, Alice is the sender!
+
+</div>
+<div class='col'>
+
+# Common Uses
+- Used for **Non-repudiation**
+- Software distribution
+- Financial transactions
+- Contract management
+- Network protocols
+
+---
+
+# Example: Caesar Cipher (Asymmetric) + Addition
+| Original Message + Hash | Alice Encrypts Hash (ROT19) | Original Message + Encrypted Hash | Bob Decrypts Hash (ROT7) | Received Message + Hash | Bob Hashes Message HImself |
+| - | - | - | - | - | - |
+| Hello, Anti-Cast! **0ACI** | ![center w:300](images/PrivateKey.png) | Hello, Anti-Cast! **0TVB** | ![center w:300](images/PublicKey.png) | Hello, Anti-Cast! **0ACI** | **0ACI** matches!|
 
 ---
 
 <!-- _class: lead -->
 # **Certificates**
-Subheading TBD
+(Public Key + Attributes) Signed
+
+---
+
+<div class='container'>
+<div class='col'>
+
+# Certificates
+- Public keys don't include identifying information
+* Certificates tell who owns a public key
+* Certificates provide basic **Authentication**
+* **If** you trust the signer, you can trust the public key
+* Self-signed certs still permit encryption!
+</div>
+
+<div class='col'>
+
+# Typical Contents
+- Subject
+- Issuer
+- Public Key
+- Not Before/Not After
+- Key Usage/Extended Key Usage
+- Signature Algorithm/Signature
+- Serial Number
+</div>
+
+---
+
+# Self-Signed Certificate Generation
+| Create a Key Pair | Create CSR | Hash CSR | Encrypt Hash with Alice's Priv Key| Package Certificate |
+| - | - | - | - | - |
+| ![w:200](images/PrivateKey.png)<br>![w:200](images/PublicKey.png) | Subject: Alice<br>Public Key:<br>![w:100](images/PublicKey.png) | 0BHF | 0UAY |  Subject: Alice<br>Issuer: Alice<br>Public Key:<br>![w:100](images/PublicKey.png)<br>Signature<br>Algorithm: Silly<br>Signature: 0UAY |
+
+---
+
+# Certification Authority (CA) Certificate Generation
+| Create a Key Pair | Create CSR | Hash CSR | Encrypt Hash with CA's Priv Key| Package Certificate |
+| - | - | - | - | - |
+| ![w:200](images/PrivateKey.png)<br>![w:200](images/PublicKey.png) | Subject: Alice<br>Public Key:<br>![w:100](images/PublicKey.png) | 0BHF | 0KQO |  Subject: Alice<br>Issuer: CA<br>Public Key:<br>![w:100](images/PublicKey.png)<br>Signature<br>Algorithm: Silly<br>Signature: 0KQO |
 
 ---
 
 <!-- _class: lead -->
-# **PKI**
-Subheading TBD
+# **Public Key Infrastructure (PKI)**
+Formalized trust - all the way down to the root
+
+---
+
+<div class='container'>
+<div class='col'>
+
+# PKI Basics
+- Not **just** technology:
+  - Hardware
+  - Software
+  - Policies
+  - Procedures
+- "Chains" of trust lead back to a
+"root" of trust
+- **If** you trust the PKI (big if),
+you can trust others that use the PKI
+</div>
+
+<div class='col'>
+
+# Common Components
+- Authorities:
+  - Root/Intermediate/Issuing
+  - Validation
+  - Registration
+  - Policy
+  - Timestamp
+- Users:
+  - End Entities
+  - Relying Parties
 
 ---
 
 <!-- _class: lead -->
 # **Real-World Uses**
-Subheading TBD
+PGP/GPG, SSL/TLS, and more acronyms
 
 ---
+
+# Thanks!
+![bg right:36% 80%](images/QR.png)
+| Find | Me! |
+| - | - |
+| Slides | github.com/jakehildreth/PKIFoundations |
+| LinkedIn | /in/jakehildreth |
+| BlueSky | @dotdot.horse |
+| Blog | blog.jakehildreth.com |
+| Site | jakehildreth.com |
 
