@@ -459,7 +459,7 @@ Hashing + Asymmetric Encryption = Better Than Ink
 with her private key
 * Alice sends the message +
 the encrypted hash to Bob
-* Bob decrypts the hash of the message using Alice's private key
+* Bob decrypts the hash of the message using Alice's public key
 * Bob hashes the original message himself
 * If hashes match, Alice is the sender!
 
