@@ -63,6 +63,26 @@ PowerShell + Identity & Access
 </div>
 
 ---
+
+# Non-Agenda
+<div class="container">
+<div class="col">
+
+* Cryptocurrency
+* Key Exchange
+* MAC/HMAC
+* Algorithms
+</div>
+
+<div class="col">
+
+* Cryptanalysis
+* Key Space
+* Steganography
+* AD CS
+</div>
+
+---
 <!-- _class: lead -->
 # **History**
 In the beginning was the word...
@@ -84,6 +104,7 @@ In the beginning was the **pass**word...
 * 600 BCE: Hebrew Scholars
 * 400 BCE: Polybius Square
 * 300 BCE: Kama Sutra
+* 196 BCE: Rosetta Stone
 * 75 BCE: Caesar Cipher
 </div>
 <div class='col'>
@@ -209,9 +230,10 @@ Secret or nah?
 - Intended to remain secret
 * Yes! **Confidentiality**
 * Requires 1 or more "keys"
-* Keys are any secret data
+* Keys are **something** used to encrypt/decrypt
 * In modern cryptography, keys are
 **really** big numbers
+* Kerckhoffs's principle
 </div>
 
 <div class='col'>
@@ -224,6 +246,12 @@ Secret or nah?
   - RSA
   - ECC
 </div>
+
+---
+<!-- _class: lead -->
+# **Encrypted data is**
+# **indistinguishable from random noise**
+
 
 ---
 <!-- _class: lead -->
@@ -371,7 +399,7 @@ Encrypt with one & Decrypt with the other
 
 <!-- _class: lead -->
 # **Hash Functions**
-Subheading TBD
+Neither potatoes not pipes 
 
 ---
 
@@ -379,7 +407,7 @@ Subheading TBD
 <div class='col'>
 
 # Hash Functions
-- Maps any data to a (probably) unique fixed-length value:
+- Maps any data to a (probably) unique fixed-length value
 - Can't be easily reversed to discover source data
 - Changing even a single bit of source data changes the hash
 - Ensures **Integrity**
@@ -618,6 +646,8 @@ PGP/GPG and SSL/TLS - Simplified
 | Client Contacts Server via HTTPS | Server Sends Certificate for Client to Validate | Server and Client Agree on a Session Key (Diffie-Helman) | Data Stream is Encrypted with Session Key |
 | - | - | - | - |
 | https://dotdot.horse | Name:<br>dotdot.horse<br>Issuer:<br>CA<br>Signature:<br>Signature | ![h:250](images/DH.png) | ![h:250](images/Ciphertext.gif)
+
+---
 
 ---
 
