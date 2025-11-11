@@ -58,7 +58,7 @@ PowerShell + Identity & Access
 
 * Signing
 * Certificates
-* Public Key Infrastructute (PKI)
+* Public Key Infrastructure (PKI)
 * Real-World Uses
 </div>
 
@@ -379,7 +379,7 @@ Subheading TBD
 <div class='col'>
 
 # Hash Functions
-- Maps any data to a (probably) unique fixed-length value
+- Maps any data to a (probably) unique fixed-length value:
 - Can't be easily reversed to discover source data
 - Changing even a single bit of source data changes the hash
 - Ensures **Integrity**
@@ -417,6 +417,13 @@ Subheading TBD
 
 <div class='col'>
 
+- HELLO
+  - 8+5+12+12+15
+  - Hash: **0052** or **00EB**
+</div>
+
+<div class='col'>
+
 * HELLOANTICAS**H**
   - 8+5+12+12+15+1+14+
   20+9+3+1+19+**8**
@@ -435,10 +442,11 @@ Max letter = 38
 ---
 
 # Real Examples: SHA1 & 2
-| Original | Hello, Anti-Cas*t*! | Hello, Anti-Cas*h*!
+| Original | SHA1 | SHA2-256 |
 | - | - | - |
-| SHA1 | 94bc685b3657b730ed72 696e036260d3fea8ab23 | 6d1ceba487b84474d554 599b24dea1fed95264ab |
-| SHA2-256 | a993f8f095c0c43348cd3 9fead7ec3fd4a26a53e889 d2a89e42adbdfde093398 | ea37a553bb16967a4545 b9f4fb11c19e9dfcdaf5ac 3f7fbdfa93a93f7cca145b |
+| Hello, Anti-Cast! | 94bc685b3657b730ed72 696e036260d3fea8ab23 | a993f8f095c0c43348cd39 fead7ec3fd4a26a53e889 d2a89e42adbdfde093398 |
+| Hello!            | 69342c5c39e5ae5f0077 aecc32c0f81811fb8193 | 334d016f755cd6dc58c53a 86e183882f8ec14f52fb0 5345887c8a5edd42c87b7 |
+| Hello, Anti-Cash! | 6d1ceba487b84474d554 599b24dea1fed95264ab | ea37a553bb16967a4545b9 f4fb11c19e9dfcdaf5ac3 f7fbdfa93a93f7cca145b |
 
 <sub>Try it yourself: https://gchq.github.io/CyberChef
 
@@ -527,11 +535,6 @@ the encrypted hash to Bob
 
 ---
 
-# Validating a Certificate
-|
-
----
-
 <!-- _class: lead -->
 # **Public Key Infrastructure (PKI)**
 Formalized trust - all the way down to the root
@@ -591,7 +594,30 @@ you can trust others that use the PKI
 
 <!-- _class: lead -->
 # **Real-World Uses**
-PGP/GPG, SSL/TLS, and more acronyms
+PGP/GPG and SSL/TLS - Simplified
+
+---
+
+# Pretty Good Privacy (PGP)/GNU Privacy Guard (GPG)
+## Encryption Process
+| Alice Writes a Message & Creates a Random Key | Alice Encrypts The Random Key With Bob's Public Key | Alice Encrypts the Message with the Random Key Alice Comabines| Alice Combines the Encrypted Message and Key And Sends to Bob |
+| - | - | - | - | 
+| Message:<br>Hello, Anti-Cast!<br>Key:<br>4dyea1wo|Encrypted Key:<br>7tjtf57d|Encrypted Message:<br>Fcjjm, Ylrg-Ayqr!|Encrypted Message:<br>Fcjjm, Ylrg-Ayqr!<br>Encrypted Key:<br>7tjtf57d|
+
+---
+
+# PGP/GPG
+## Decryption Process
+| Bob Receives the Encrypted Package | Bob Decrypts The Random Key With His Private Key | Alice Encrypts the Message with the Random Key Alice Comabines| 
+| - | - | - |
+|Encrypted Message:<br>Fcjjm, Ylrg-Ayqr!<br>Encrypted Key:<br>7tjtf57d|Decrypted Key:<br>4dyea1wo|Decrypted Message:<br>Hello, Anti-Cast!|
+
+---
+
+# Secure Sockets Layer (SSL)/Transport Layer Security (TLS)
+| Client Contacts Server via HTTPS | Server Sends Certificate for Client to Validate | Server and Client Agree on a Session Key (Diffie-Helman) | Data Stream is Encrypted with Session Key |
+| - | - | - | - |
+| https://dotdot.horse | Name:<br>dotdot.horse<br>Issuer:<br>CA<br>Signature:<br>Signature | ![h:250](images/DH.png) | ![h:250](images/Ciphertext.gif)
 
 ---
 
