@@ -225,6 +225,13 @@ Secret or nah?
 * EEEEEEEEEeEEeEEEEEEEEEEEEeeEEeEeEEEEEEEEEeeEeeEEEEEEEEEEEeeEeeEEEEEEEEEEEeeEeeeeEEEEEEEEEEeEeeEE EEEEEEEEEeEEEEEeEEEEEEEEEeeEeeeEEEEEEEEEEeeeEeEEEEEEEEEEEeeEeEEeEEEEEEEEEEeEeeEeEEEEEEEEEeEEEEeeEEEEEEEEEeeEEEEeEEEEEEEEEeeeEEeeEEEEEEEEEeeeEeEEEEEEEEEEEEeEEEEe
 <sub>Try it yourself: https://www.a.tools/Tool.php?Id=389</sub>
 ---
+![bg right:42%](images/RosettaStone.svg)
+# Example: Rosetta Stone
+- Ancient Egyptian was indecipherable
+- Rosetta Stone showed Egyptian next to Greek
+- Allowed for translating / "decoding" the Egyptian.
+- Encoding can be mistaken for encryption - but once the method is known, it is trivial to break.
+---
 
 <div class='container'>
 <div class='col'>
