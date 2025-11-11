@@ -595,6 +595,7 @@ you can trust others that use the PKI
 # How Do I Know If I Should Trust a PKI?
 - Mostly handled for you
 - OSes include lists of trusted roots
+  - They're also usually out of date - Server 2025 GA included 7 Root CAs that were expired. 
 - Active Directory (AD) networks have PKI: AD Certificate Services
   * Drink!
 - Reputable PKIs publish their configurations and procedures
