@@ -32,15 +32,14 @@ style: |
 ![bg left](images/Foundation.jpg)
 # **PKI Foundations for Security Pros**
 
-## Jake Hildreth
-## [jakehildreth.com](https://jakehildreth.com/)
+## Jake Hildreth<br>w/ Tyler Jacobs
 
 Anti-Cast, 2025-11-12
 
 ---
 ![bg right:40% 110%](images/Family.png)
 # `Get-ADUser -Identity ‘Jake Hildreth’`
-- Husband, Dad, Recovering Sysadmin
+* Husband, Dad, Recovering Sysadmin
 * Principal Security Consultant @ Semperis
 * Open-source Toolmaker:
 Locksmith, BlueTuxedo, PowerPUG!
