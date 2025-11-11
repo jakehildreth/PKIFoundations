@@ -625,13 +625,13 @@ you can trust others that use the PKI
 
 <!-- _class: lead -->
 # **Real-World Uses**
-PGP/GPG and SSL/TLS - Simplified
+PGP/GPG and SSL/TLS - **VERY** Simplified
 
 ---
 
 # Pretty Good Privacy (PGP)/GNU Privacy Guard (GPG)
 ## Encryption Process
-| Alice Writes a Message & Creates a Random Key | Alice Encrypts The Random Key With Bob's Public Key | Alice Encrypts the Message with the Random Key Alice Comabines| Alice Combines the Encrypted Message and Key And Sends to Bob |
+| Alice Writes a Message & Creates a Random Key | Alice Encrypts The Random Key With Bob's Public Key | Alice Encrypts the Message with the Random Key | Alice Combines the Encrypted Message and Key And Sends to Bob |
 | - | - | - | - | 
 | Message:<br>Hello, Anti-Cast!<br>Key:<br>4dyea1wo|Encrypted Key:<br>7tjtf57d|Encrypted Message:<br>Fcjjm, Ylrg-Ayqr!|Encrypted Message:<br>Fcjjm, Ylrg-Ayqr!<br>Encrypted Key:<br>7tjtf57d|
 
@@ -639,7 +639,7 @@ PGP/GPG and SSL/TLS - Simplified
 
 # PGP/GPG
 ## Decryption Process
-| Bob Receives the Encrypted Package | Bob Decrypts The Random Key With His Private Key | Alice Encrypts the Message with the Random Key Alice Comabines| 
+| Bob Receives the Encrypted Package | Bob Decrypts The Random Key With His Private Key | Bob Decrypts the Message with the Random Key | 
 | - | - | - |
 |Encrypted Message:<br>Fcjjm, Ylrg-Ayqr!<br>Encrypted Key:<br>7tjtf57d|Decrypted Key:<br>4dyea1wo|Decrypted Message:<br>Hello, Anti-Cast!|
 
@@ -654,12 +654,14 @@ PGP/GPG and SSL/TLS - Simplified
 
 ---
 
+![bg right:34% 80%](images/QR.png)
 # Thanks!
-![bg right:36% 80%](images/QR.png)
-| Find | Me! |
-| - | - |
-| Slides | github.com/jakehildreth/PKIFoundations |
-| LinkedIn | /in/jakehildreth |
-| BlueSky | @dotdot.horse |
-| Blog | blog.jakehildreth.com |
-| Site | jakehildreth.com |
+Slides and Stuff: https://github.com/jakehildreth/PKIFoundations
+
+| Find | Jake | Tyler |
+| - | - | - |
+| LinkedIn | [/in/jakehildreth](https://linkedin.com/in/jakehildreth) | [/in/thetylerjacobs/](https://linkedin.com/in/thetylerjacobs/) |
+| GitHub | [jakehildreth](https://github.com/jakehildreth) | [ActiveDirectoryKC](https://github.com/ActiveDirectoryKC)  |
+| Reddit | **no.** | [/u/poolmanjim](https://reddit.com/u/poolmanjim) |
+| Blog | [blog.jakehildreth.com](https://blog.jakehildreth.com) | ??? |
+| Site | [jakehildreth.com](https://jakehildreth.com) | ??? | 
