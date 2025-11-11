@@ -4,7 +4,7 @@ transition: fade-out
 theme: default
 class: 
   - invert
-paginate: true
+header: <img src="images/SemperisLogo.png" height="30">
 backgroundColor: #000
 style: |
   .container{
@@ -24,6 +24,9 @@ style: |
   }
 ---
 
+<!-- _header: "" -->
+<!-- _footer: "" -->
+<!-- _paginate: false -->
 ![bg left](images/Foundation.jpg)
 # **PKI Foundations for Security Pros**
 
