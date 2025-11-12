@@ -110,7 +110,7 @@ PowerShell + Identity & Access
 * Cryptanalysis
 * Key Space
 * Steganography
-* AD CS
+* Active Directory Certificate Services
 </div>
 
 ---
@@ -124,6 +124,10 @@ In the beginning was the word...
 ![bg right](images/BigBang.svg)
 # **History**
 In the beginning was the **pass**word...
+
+<!--
+Humans have been hiding communications/ideas for over 4 thousand years
+-->
 
 ---
 
@@ -145,9 +149,24 @@ In the beginning was the **pass**word...
 * 750-800 CE: Arabic Scholars
 * 800-1100 CE: English Scribes
 * 1400 CE: Arabic Scholars
-* 1508 CE: Tabula Recta
+* 1500s CE: Tabula Recta/Vignère Cipher
 * 1626 CE: Antoine Rossignol
 </div>
+
+<!--
+Heiroglyphs: not exactly encryption
+Clay Tablets: hidden glaze recipe
+Hebrew Scholar: first recognizable cipher
+Polybius square: mathematical representation of letters
+Kama Sutra: one chapter about how to send secret sexy letters to lovers
+Rosetta Stone: Tyler will talk about later
+Caesar Cipher: aka shift cipher
+Arabic Scholars: discovery of frequency analysis for code-breaking
+English Scholars: hidden notes, answers to riddles
+Arabic Scholars: first polyalphabetic ciphers
+Tabula Recta: a polyalphabetic table which is just spicy Caesar cipher
+Antoine Rossignol: Created the Great Cipher, which remained unsolved for 350+ years
+-->
 
 --- 
 
@@ -176,21 +195,33 @@ In the beginning was the **pass**word...
 <div class='container'>
 <div class='col'>
 
-* Claude Shannon
-* Data Encryption Standard (DES)
-* Diffie-Hellman (DH)
-* Rivest, Shamir, Adelman (RSA)
-* Message Digest Algorithms (MD*)
+* 1950s: Claude Shannon
+* 1975: Data Encryption Standard (DES)
+* 1976: Diffie-Hellman (DH)
+* 1977: Rivest, Shamir, Adelman (RSA)
+* 1989: Message Digest Algorithms (MD*)
+* 1991: Digital Signature Algorithm (DSA)
 
 </div>
 <div class='col'>
 
-* Digital Signature Algorithm (DSA)
-* Secure Hash Algorithms (SHA)
-* Elliptic Curve Cryptography (ECC)
-* Advanced Encryption Standard (AES)
-* Post-Quantum Cryptography (PQC)
+* 1995: Secure Hash Algorithms (SHA)
+* 1985-2004: Elliptic Curve Cryptography (ECC)
+* 2001: Advanced Encryption Standard (AES)
+* The Future: Post-Quantum Cryptography (PQC)
 </div>
+
+<!--
+Shannon: developed many mathematical theories about information that all later cryptology relies on
+DES: symmetric encryption published by US Govt
+DH: first instance of asymmetric encryption for comms over insecure channel
+RSA: a different approach to inseure communication
+MD: common hashing algorithm, broken multiple times, each time, just add a number! no longer should be used
+SHA: common hashing algorithm, broken multiple times, SHA3 is good for now.
+ECC: public key/asymmetric encryption with smaller keys
+AES: In common use now, mostly unbroken
+PQC: mostly a buzzword for now, quantum computers will eventually be able to quickly break current encryption schemes.
+-->
 
 ---
 
@@ -213,6 +244,10 @@ Ensures a message is only readable by its intended recipient
 # Integrity
 Ensures a message has not been tampered with or changed
 
+<!--
+This Integra's license plate 
+-->
+
 ---
 
 <!-- _paginate: false -->
@@ -220,12 +255,20 @@ Ensures a message has not been tampered with or changed
 # Non-Repudiation
 Ensures an author cannot refute authorship of a message
 
+<!--
+In "Bart Gets Famous", he gets famous for saying "I didn't do it", but he clearly did it... it was on video before Sora existed.
+-->
+
 ---
 
 <!-- _header: "" -->
 ![bg left:40% 110%](images/Popeye.jpg)
 # Authentication
-Provides proof an author of a message is who they claim
+Provides proof an author of a message is who they claim to be
+
+<!--
+
+-->
 
 ---
 <!-- _class: lead -->
@@ -260,6 +303,11 @@ Secret or nah?
 - "Hello, Anti-Cast!" encoded:
 * EEEEEEEEEeEEeEEEEEEEEEEEEeeEEeEeEEEEEEEEEeeEeeEEEEEEEEEEEeeEeeEEEEEEEEEEEeeEeeeeEEEEEEEEEEeEeeEE EEEEEEEEEeEEEEEeEEEEEEEEEeeEeeeEEEEEEEEEEeeeEeEEEEEEEEEEEeeEeEEeEEEEEEEEEEeEeeEeEEEEEEEEEeEEEEeeEEEEEEEEEeeEEEEeEEEEEEEEEeeeEEeeEEEEEEEEEeeeEeEEEEEEEEEEEEeEEEEe
 <sub>Try it yourself: https://www.a.tools/Tool.php?Id=389</sub>
+
+<!--
+Next Slide: Tyler
+-->
+
 ---
 
 <!-- _paginate: false -->
@@ -445,6 +493,10 @@ Encrypt with one & Decrypt with the other
 | Hello, Anti-Cast! | ![center w:300](images/PrivateKey.png) | Olssv, Huap-Jhza! | ![center w:300](images/PublicKey.png) | Hello, Anti-Cast! |
 
 <sub>Try it yourself: https://rot13.com</sub>
+
+<!--
+Next few Slides: Tyler
+-->
 
 --- 
 
